@@ -2,7 +2,6 @@ const EventListener = function (obj) {
     let Register = {};
 
     obj.on =  function (name, method) {
-
         if (!Register.hasOwnProperty(name)){
             Register[name] = [];
         }
@@ -20,6 +19,8 @@ const EventListener = function (obj) {
                     args.push(arguments[j]);
                 }
                 handler.apply(this,args);
+                console.log("客户端接收 args = " + JSON.stringify(args));
+
             }
         }
     };
